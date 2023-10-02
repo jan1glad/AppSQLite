@@ -26,15 +26,16 @@ public class UserInsert extends AppCompatActivity {
         ClientsModel clientsModel = new ClientsModel();
 
         try {
-            clientsModel = new ClientsModel(-1,txt_insertName.getText().toString(),txt_insertSurname.getText().toString(),txt_insertCity.getText().toString(),txt_insertDepartment.getText().toString(),Integer.parseInt(txt_insertSalary.getText().toString()));
+            clientsModel = new ClientsModel(-1,txt_insertName.getText().toString().toUpperCase(),txt_insertSurname.getText().toString().toUpperCase(),txt_insertCity.getText().toString().toUpperCase(),txt_insertDepartment.getText().toString().toUpperCase(),Integer.parseInt(txt_insertSalary.getText().toString()));
             Toast.makeText(UserInsert.this, "Succes", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             Toast.makeText(UserInsert.this, "Error occurred", Toast.LENGTH_SHORT).show();
         }
         DatabaseClients databaseClients = new DatabaseClients(UserInsert.this);
         boolean succes = databaseClients.addClients(clientsModel);
-        Toast.makeText(UserInsert.this, "Succes", Toast.LENGTH_SHORT).show();
-
+        if (succes) {
+            Toast.makeText(UserInsert.this, "Succes", Toast.LENGTH_SHORT).show();
+        }else Toast.makeText(UserInsert.this, "Something went wrong", Toast.LENGTH_SHORT).show();
 
     }
 }

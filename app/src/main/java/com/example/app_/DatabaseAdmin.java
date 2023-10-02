@@ -58,11 +58,11 @@ public class DatabaseAdmin extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, new String[]{name, password});
 
         if (cursor.moveToFirst()) {
-            // Match found in the database
+            // match found
             cursor.close();
             return true;
         } else {
-            // No match found
+            // no match found
             cursor.close();
             return false;
         }

@@ -33,8 +33,11 @@ public class AdminAdd extends AppCompatActivity {
         }
         DatabaseAdmin databaseAdmin = new DatabaseAdmin(AdminAdd.this);
         boolean succes = databaseAdmin.addOne(adminModel);
-        Toast.makeText(AdminAdd.this, "Succes", Toast.LENGTH_SHORT).show();
-
+        if (succes) {
+            Toast.makeText(AdminAdd.this, "Succes", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(AdminAdd.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void goBack(View v){

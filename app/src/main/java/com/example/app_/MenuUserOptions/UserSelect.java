@@ -31,7 +31,7 @@ public class UserSelect extends AppCompatActivity {
 
         databaseClients = new DatabaseClients(UserSelect.this);
 
-        String[] groupOptions = {"Name", "Surname", "City", "Department", "Salary"};
+        String[] groupOptions = {"ID","Name", "Surname", "City", "Department", "Salary"};
         String[] descAsc = {"ASC", "DESC"};
         ArrayAdapter<String> groupAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, groupOptions);
         ArrayAdapter<String> options = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, descAsc);
